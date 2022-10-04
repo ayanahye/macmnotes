@@ -91,6 +91,14 @@
           </p>
           <p><strong>Then by rule of product there are 8!/2!2!3! * 9!/6!3! arrangements. </strong>
           </p>
+          <h3>No Consecutive Items</h3>
+          <p>Suppose you have <strong>9 balls</strong> and <strong>5 bins </strong>to put them in. However you <strong>do not want any two consecutive</strong>, how can we calculate this?</p>
+          <ul>
+            <li>For the first ball there are 5 options since all bins are empty.</li>
+            <li>For the second ball there is now only 4 options because one of them has been taken.</li>
+            <li>For the third ball there is also only 4 options because we cannot have consecutive balls so it cannot go into the bin that ball 2 went into.</li>
+          </ul>
+          <p>This pattern is repeated and the solutions becomes <strong>5*4^8.</strong>
           <h3>At Least and At Most</h3>
           <h4><u>At Least:</u></h4>
           <p><strong>Ex 1. Consider that there are 13 people, 7 women and 6 men. We want to choose 5 out of the 13.
