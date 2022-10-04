@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<header>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discrete Math I</title>
+  <div class="header-banner">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </div>
+</header>
+
+<body>
+  <div class="grid-container">
+    <div id="flex-box" class="grid-item grid-item-1">
+        <nav>
+            <ul class="list">
+              <li class="units"><a href="#counting">Counting</a></li>
+              <li class="units"><a href="#logic">Logic</a></li>
+              <li class="units"><a href="#quantifiers">Quantifiers</a></li>
+            </ul>
+          </nav>
+    </div>
+    <article id="flex-box-2" class="grid-item grid-item-2">
+      <section id="counting" class="content">
+        <div class="Counting">
+          <h2><u>Counting</u></h2>
+          <h2>Basics</h2>
+          <p>
+          <p><strong>Combinations:</strong> Jack and Jill 2C2 = 1</p>
+          <p><strong>Permutations:</strong> Jack and Jill or Jill and Jack 2P2 = 2, n choices then n-1...</p>
+          <p><strong>Arrangements:</strong> n choices each time</p>
+          <ul>
+            <li>OR = +</li>
+            <li>AND = *</li>
+          </ul>
+          <ul>
+            <li>If a number or something is fixed we remove that from our choices.</li>
+          </ul>
+          </p>
+          <h3>Ordering 10 People</h3>
+          <p>
+          <ul>
+            <li>10! ways. (10 spots, 9 spots, 8spots…)
+            </li>
+          </ul>
+          </p>
+          <h3>Arranging Letters</h3>
+          <p>Arranging the letters in “DATABASES”</p>
+          <p>
+          <ul>
+            <li>9 letters
+            </li>
+            <li>3 As
+            </li>
+            <li>2 S
+            </li>
+          </ul>
+          <p><strong>Total ways = 9!/3!2! (divide the repeated letters)</strong></p>
+          </p>
+          <h3>Staircase Paths</h3>
+          <p>Staircase paths from (2,1) to (7,4)
+          </p>
+          <p>
+          <ul>
+            <li>7-2=5</li>
+            <li>4-1=3</li>
+            <li>5 Rights and 3 Ups</li>
+          </ul>
+          <p><strong>Ways to arrange: 8!/3!5!</strong></p>
+          </p>
+          <h3>Circular Tables</h3>
+          <p>Arranging people at a circular table.</p>
+          <p>
+          <ul>
+            <li>6 people, 6 positions 6! ways to arrange
+            </li>
+            <li>Want to remove the ways which are rearrangements of already counted positions do we divide by the 6
+              positions. </li>
+          </ul>
+          <p><strong>Therefore total arrangements are 6!/6 = 5!</strong></p>
+          </p>
+          <h3>No Adjacent Letters</h3>
+          <p>Consider the word: <strong>TALLAHASSEE</strong></p>
+          <p>There are 11! ways to arrange the letters and dividing by repeats we get 11!/2!3!2!2!</p>
+          <p>if we don’t want adjacent A’s then we remove all the A’s to get: </p>
+          <li><strong>TLLHSSEE</strong></li>
+          <p>Which is 8 letters and 8!/2!3!2! ways to arrange them. Then there are 9 positions in between the letters to
+            place 3 A’s so we have 9C3 (we don’t have to divide by 3! for repeated A’s since it’s a combination and
+            we’re not counting them.)
+          </p>
+          <p><strong>Then by rule of product there are 8!/2!2!3! * 9!/6!3! arrangements. </strong>
+          </p>
+          <h3>At Least and At Most</h3>
+          <h4><u>At Least:</u></h4>
+          <p><strong>Ex 1. Consider that there are 13 people, 7 women and 6 men. We want to choose 5 out of the 13.
+            </strong>
+          </p>
+          <p>If we want to select <strong>at least</strong> 1 female then we can select <strong>1 or
+              more</strong>females (up to 5)
+          </p>
+          <p>So we can take the total amount of ways to select 5 people out of 13 and subtract that by the number of
+            ways to get no females and all males. </p>
+          <p>We do this because the inverse of at least 1 is 0. </p>
+          <li>So the solution is:</li>
+          <ol type="I"><strong>13C5 - 7C0 * 6C5</strong></ol>
+          <h4>At Most:</h4>
+          <p><strong>Ex 2. At most 3 males</strong></p>
+          <p>This means we can have <strong>0,1,2 or 3 males.</strong> </p>
+          <p>The opposite of this is 4 or more males. </p>
+          <p>Hence, we can take total amount of ways to choose 5 people and subtract the ways we can get 4 males of 5
+            males.
+          </p>
+          <li>So the solution is:</li>
+          <ol type="I"><strong>13C5 - 7C1*6C4 * 7C0*6C5</strong></ol>
+          <h3>Arrangement of Teams</h3>
+          <p><strong>24 kids divided into 4 teams of 6, in how many ways? </strong></p>
+          <li>(24C6) * (24-6C6) * (18-6C6) * (12-6C6) </li>
+          <h3>Combinations With Repetition</h3>
+          <ol type="I"><u><strong>Formula: (n+r-1Cr)</strong></u></ol>
+          <p><strong>Example:</strong></p>
+          <li>20 flavors of donuts, 12 each and we want to select 12</li>
+          <ol type="I">
+            <li>This is a combinations with repetition because if we select 1 donut of a kind then there are still 11
+              and we can select from that again. </li>
+            <li>Can be written as <strong>x1 + x2 + x3 + x4…x12 = 20 </strong></li>
+            <li>The solutions to this is <strong>(20+12-1C12)</strong></li>
+            <li><strong>Think of this like 20 baskets and we want to place 12 things in them. where you can put 0-12 in
+                each of them </strong></li>
+          </ol>
+          <ol type="I">
+            <li>🍩🍩🍩🍩🍩🍩|🍪🍪🍪|🍰🍰🍰|||||||||||||||||</li>
+            <li>There are 6 donuts for the first basket (first flavor) 3 for the next flavor and 3 for the 3rd flavor.
+              With a remaining 8 empty baskets which donuts could have been placed.</li>
+          </ol>
+          <h3>Integer Solutions</h3>
+          <p><strong>Solutions to: x1 + x2 + x3...x6 &#60; 10 </strong></p>
+          <p>The total sum should be less than 10. </p>
+          <p><strong>Let's assume the sum is 9.</strong></p>
+          <li>Then x1 + x2 + x3...x6 should be equal to 9-some integer k which we will call x7 </li>
+          <li>If we move x7 to the other side then we get </li>
+          <ol type="I">x1+x2+x3...x7 = 9</ol>
+          <OL type="I">and we can solve this as <strong>(7+9-1C9)</strong></OL>
+          <ol type="I">9 things and 7 containers. where 9=r and 7=n.</ol>
+          <h3>Identical and Non-identical Items</h3>
+          <p><strong>Example: 5 identical and 5 different, 10 total items, we want to choose 5 items. </strong>
+          </p>
+          <p>We can choose from the set of identical or nonidentical. So for each of 5 items there are 2 choices. </p>
+          <li>2*2*2*2*2 = <strong>2^5</strong></li>
+          <p>Where n^r (n is the containers and r is the items) </p>
+
+        </div>
+      </section>
+      <section id="logic" class="content">
+        <div class="Logic">
+          <h2>Logic</h2>
+          <h3>Basics</h3>
+          <p><strong>Exclusive Or</strong> = either one is true but not both. </p>
+          <p><strong>Biconditional</strong> = p->q &#60;--> q->p p if and only if q, p is necessary and sufficient for
+            q.</p>
+          <ul>
+            <li>If validating by truth table, when <strong>premises are true</strong>, the <strong>conclusion must be
+                true.</strong>
+            </li>
+            <li>If assigning truth values, show that <strong>if the conclusion = 0</strong> then the premises
+              <strong>cannot = 1.</strong>
+            </li>
+          </ul>
+          <p><strong><u>Ways to write implication p->q</u></strong></p>
+          <ul>
+            <li>if p then q</li>
+            <li>p is sufficient for q</li>
+            <li>p implies q</li>
+            <li>q only if p</li>
+            <li>q if p</li>
+            <li>q is necessary for p</li>
+          </ul>
+          <p><strong>p->q is true always except when p is 1 and q is 0. </strong></p>
+          <h3>Negating Implication</h3>
+          <ol type="I">
+            <li>P->Q</li>
+            <li>~PvQ</li>
+            <li>~(~PvQ)</li>
+            <li>P^~Q</li>
+          </ol>
+          <p>P but not Q. If writing in English don't include the word if. </p>
+          <h3>Logic Laws</h3>
+          <div class="image">
+            <img class="body-img" src="images/logiclaws1.png">
+          </div>
+          <p>Writing the Dual</p>
+          <ul>
+            <li>Swap the T/F</li>
+            <li>Replace and & or</li>
+          </ul>
+          <h3>Converse, Inverse, Contrapositive</h3>
+          <ol type="I">
+            <p><strong>Statement:</strong> p->q</p>
+            <p><strong>Contrapositive:</strong> ~Q->~P (logical equivalence)
+            </p>
+            <p><strong>Inverse:</strong> ~P->~Q
+            </p>
+            <p><strong>Converse:</strong> Q->P (logical equivalence)
+            </p>
+          </ol>
+          <h3>Rules of Inference</h3>
+          <div class="image">
+            <img class="body-img" src="images/rulesofinferenece.png">
+          </div>
+          
+        </div>
+      </section>
+
+      <section class="content">
+        <div class="Quantifiers">
+          <h2 id="quantifiers">Quantifiers</h2>
+          <div class="image">
+            <img class="body-img" src="images/quantifiers.png">
+          </div>
+          <ol type="I">
+            <p><strong>∀: For all</strong></p>
+            <p><strong>∃: There exists</strong> </p>
+          </ol>
+          <ul>
+            <li><strong>∀X ∃Y f(x, y)</strong> means for all x there exists one y.</li>
+            <li><strong>∃X ∀Y f(x, y)</strong> means that there exists an X for all y.</li>
+          </ul>
+          <p>When writing contrapositive, converse, inverse we keep the quantifiers the same.</p>
+          <h3>Negating Quantifiers</h3>
+          <div class="image">
+            <img class="body-img" src="images/negatingquantifiers.png">
+          </div>
+          
+          <p>We start by adding the ~ in front of the whole statement then we <strong>distribute by steps. </strong></p>
+          <p>So first distribute the not to the quantifier so that it changes to the other quantifier. Then put the ~ in
+            front of the rest of the statement and distribute accordingly. </p>
+          <h3>Rules of Inference For Quantifiers</h3>
+          <p><strong>Universal instantiation: </strong></p>
+          <li>∀Xp(X) then for one c, p(C)</li>
+          <p><strong>Universal generalization: </strong></p>
+          <li>p(C) then for all X’s ∀Xp(X)</li>
+          <h3>Proofs of Theormes</h3>
+          <p><strong><u>Direct proof: assume p and show q is true.</u></strong></p>
+          <p><strong><u>Indirect proof:</u></strong></p>
+          <li>Contrapositive</li>
+          <li>Contradiction</li>
+          <h4>Contrapositive</h4>
+          <li>Assume not q and prove not p</li>
+          <li>First assume the conclusion is false.</li>
+          <h4>Contradiction</h4>
+          <li>Assume not q and p, show that this implies a contradiction.</li>
+          <li class="last">First assume the conclusion is false.</li>
+        </div>
+      </section>
+    </article>
+  </div>
+</body>
+
+</html>
